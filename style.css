@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* General styling */
+
+:root {
+    --color-primary100: hsl(257, 40%, 49%);
+    --color-primary200: hsl(300, 69%, 71%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primary100);
+    background-image: url(images/bg-mobile.svg);
+    background-size: contain;
+
+    color: white;
+    font-size: clamp(1rem, 0.95rem + .25vw, 1.25rem);
+}
+
+h1, button {
+    font-family: 'Poppins', sans-serif;;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header styling */
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+
+header img {
+    height: 40px;
+    width: auto;
+}
+
+/* Main styling */
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+.content-illustration img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    width: 80%;
+    text-align: center;
+}
+
+.content-info button {
+    color: var(--color-primary100);
+    border: none;
+    padding: 1rem 5rem;
+    border-radius: 100vmax;
+
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.content-info button:hover {
+    color: white;
+    background-color: var(--color-primary200);
+}
+
+/* Footer styling */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 6rem 0 3rem 0;
+}
+
+footer > * {
+    font-size: 2rem;
+
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+footer > *:hover {
+    color: var(--color-primary200);
+}
+
+@media screen and (min-width: 50em) {
+    body {
+        background-image: url(images/bg-desktop.svg);
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .content-info {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    footer {
+        display: flex;
+        justify-content: flex-end;
+
+        padding: 0 2rem;
+    }
+}
